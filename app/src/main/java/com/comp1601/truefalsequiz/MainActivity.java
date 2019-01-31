@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
                     "("+ Build.PRODUCT+")";
             s+="\n RELEASE:" + android.os.Build.VERSION.RELEASE ;
             s+="\n BRAND:" + android.os.Build.BRAND ;
-            s+="\n DISPLAY";
-            s+="\n HARDWARE";
-            s+="\n Build ID";
-            s+="\n MANUFACTURER";
-            s+="\n USER";
-            s+="\n HOST";
+            s+="\n DISPLAY" + Build.DISPLAY;
+            s+="\n HARDWARE" + Build.HARDWARE;
+            s+="\n Build ID"+ Build.ID;
+            s+="\n MANUFACTURER"+ Build.MANUFACTURER;
+            s+="\n USER" + Build.USER;
+            s+="\n HOST" + Build.HOST;
 
         } catch (Exception e){
             Log.e(TAG,"Error getting Device INFO");
