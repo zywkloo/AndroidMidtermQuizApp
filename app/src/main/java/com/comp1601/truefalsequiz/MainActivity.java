@@ -2,7 +2,9 @@ package com.comp1601.truefalsequiz;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.os.Build;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -10,15 +12,42 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private  final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);;
     private Button mYesButton;
     private Button mNoButton;
-    private ArrayList<Question> mQuestions = new ArrayList() ;
+    private ArrayList<Question> mQuestions = new ArrayList() ;//TODO:Leak?
     private  TextView mQuestionTextView;
     private int mCurrentQuestionIndex = 0;
+    private String getDeviceInfo(){
+        String s="Device info:";
+        try{
+            s+= "\n OS Version:" + System.getProperty("os.version")+
+                    "("+android.os.Build.VERSION.INCREMENTAL + ")";
+            s+="\n OS API Level;"  + Build.VERSION.SDK_INT;
+            s+="\n Device:" + android.os.Build.DEVICE;
+            s+="\n Model (and Product):" + android.os.Build.MODEL +
+                    "("+ Build.PRODUCT+")";
+            s+="\n RELEASE:" + android.os.Build.VERSION.RELEASE ;
+            s+="\n BRAND:" + android.os.Build.BRAND ;
+            s+="\n DISPLAY";
+            s+="\n HARDWARE";
+            s+="\n Build ID";
+            s+="\n MANUFACTURER";
+            s+="\n USER";
+            s+="\n HOST";
+
+        } catch (Exception e){
+            Log.e(TAG,"Error getting Device INFO");
+        }
+        return s;
+
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, getDeviceInfo());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mYesButton= findViewById(R.id.yes_button);
@@ -35,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         mYesButton.setOnClickListener(v->{
+                Log.i(TAG,"Yes Button Clicked");
                 if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("Yes")) {
                     Toast.makeText(MainActivity.this,
                             R.string.correct_answer_toast,
@@ -51,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mNoButton.setOnClickListener(v-> {
+                Log.i(TAG,"No Button Clicked");
                 if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("No")) {
                     Toast.makeText(MainActivity.this,
                             R.string.correct_answer_toast,
