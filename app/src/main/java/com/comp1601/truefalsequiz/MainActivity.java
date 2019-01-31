@@ -24,18 +24,18 @@ public class MainActivity extends AppCompatActivity {
         try{
             s+= "\n OS Version:" + System.getProperty("os.version")+
                     "("+android.os.Build.VERSION.INCREMENTAL + ")";
-            s+="\n OS API Level;"  + Build.VERSION.SDK_INT;
+            s+="\n OS API Level:"  + Build.VERSION.SDK_INT;
             s+="\n Device:" + android.os.Build.DEVICE;
             s+="\n Model (and Product):" + android.os.Build.MODEL +
                     "("+ Build.PRODUCT+")";
             s+="\n RELEASE:" + android.os.Build.VERSION.RELEASE ;
             s+="\n BRAND:" + android.os.Build.BRAND ;
-            s+="\n DISPLAY" + Build.DISPLAY;
-            s+="\n HARDWARE" + Build.HARDWARE;
-            s+="\n Build ID"+ Build.ID;
-            s+="\n MANUFACTURER"+ Build.MANUFACTURER;
-            s+="\n USER" + Build.USER;
-            s+="\n HOST" + Build.HOST;
+            s+="\n DISPLAY:" + Build.DISPLAY;
+            s+="\n HARDWARE:" + Build.HARDWARE;
+            s+="\n Build ID:"+ Build.ID;
+            s+="\n MANUFACTURER:"+ Build.MANUFACTURER;
+            s+="\n USER:" + Build.USER;
+            s+="\n HOST:" + Build.HOST;
 
         } catch (Exception e){
             Log.e(TAG,"Error getting Device INFO");
