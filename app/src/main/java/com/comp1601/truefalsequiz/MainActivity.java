@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
         String s="Device info:";
         try{
             s+= "\n OS Version:" + System.getProperty("os.version")+
-                    "("+android.os.Build.VERSION.INCREMENTAL + ")";
+                    "("+Build.VERSION.INCREMENTAL + ")";
             s+="\n OS API Level:"  + Build.VERSION.SDK_INT;
-            s+="\n Device:" + android.os.Build.DEVICE;
-            s+="\n Model (and Product):" + android.os.Build.MODEL +
+            s+="\n Device:" + Build.DEVICE;
+            s+="\n Model (and Product):" + Build.MODEL +
                     "("+ Build.PRODUCT+")";
-            s+="\n RELEASE:" + android.os.Build.VERSION.RELEASE ;
-            s+="\n BRAND:" + android.os.Build.BRAND ;
+            s+="\n RELEASE:" + Build.VERSION.RELEASE ;
+            s+="\n BRAND:" + Build.BRAND ;
             s+="\n DISPLAY:" + Build.DISPLAY;
             s+="\n HARDWARE:" + Build.HARDWARE;
             s+="\n Build ID:"+ Build.ID;
