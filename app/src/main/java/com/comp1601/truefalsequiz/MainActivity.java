@@ -34,9 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
 
 
-        mYesButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
+        mYesButton.setOnClickListener(v->{
                 if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("Yes")) {
                     Toast.makeText(MainActivity.this,
                             R.string.correct_answer_toast,
@@ -50,13 +48,9 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
 
                 }
-
-            }
         });
 
-        mNoButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
+        mNoButton.setOnClickListener(v-> {
                 if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("No")) {
                     Toast.makeText(MainActivity.this,
                             R.string.correct_answer_toast,
@@ -70,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
 
                 }
-            }
         });
 
     }
