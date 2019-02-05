@@ -19,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
     private Button mCButton;
     private Button mDButton;
     private Button mEButton;
+    private Button mPrevButton;
+    private Button mSubmitButton;
+    private Button mNextButton;
+
     private ArrayList<Question> mQuestions = new ArrayList() ;
     private  TextView mQuestionTextView;
     private int mCurrentQuestionIndex = 0;
@@ -59,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
         mDButton= findViewById(R.id.D_button);
         mEButton= findViewById(R.id.E_button);
 
+        mPrevButton= findViewById(R.id.Prev_button);
+        mNextButton= findViewById(R.id.Next_button);
+        mSubmitButton= findViewById(R.id.Submit_button);
+
+
         mQuestions.add(new Question(getString(R.string.question1)));
         mQuestions.add(new Question(getString(R.string.question2)));
         mQuestions.add(new Question(getString(R.string.question3)));
@@ -72,85 +81,479 @@ public class MainActivity extends AppCompatActivity {
         mAButton.setOnClickListener(v->{
                 Log.i(TAG,"A Button Clicked");
                 if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("A")) {
-//                    Toast.makeText(MainActivity.this,
-//                            R.string.correct_answer_toast,
-//                            Toast.LENGTH_SHORT).show();
-                    mCurrentQuestionIndex++;
-                    if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
-                    mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
                 } else {
-                    Toast.makeText(MainActivity.this,
-                            R.string.wrong_answer_toast,
-                            Toast.LENGTH_SHORT).show();
-
                 }
         });
 
         mBButton.setOnClickListener(v-> {
                 Log.i(TAG,"B Button Clicked");
-                if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("B")) {
-                    Toast.makeText(MainActivity.this,
-                            R.string.correct_answer_toast,
-                            Toast.LENGTH_SHORT).show();
-                    mCurrentQuestionIndex++;
-                    if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
-                    mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
-                } else {
-                    Toast.makeText(MainActivity.this,
-                            R.string.wrong_answer_toast,
-                            Toast.LENGTH_SHORT).show();
-
-                }
+            if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("B")) {
+            } else {
+            }
         });
 
         mCButton.setOnClickListener(v-> {
             Log.i(TAG,"C Button Clicked");
             if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("C")) {
-                Toast.makeText(MainActivity.this,
-                        R.string.correct_answer_toast,
-                        Toast.LENGTH_SHORT).show();
-                mCurrentQuestionIndex++;
-                if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
-                mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
             } else {
-                Toast.makeText(MainActivity.this,
-                        R.string.wrong_answer_toast,
-                        Toast.LENGTH_SHORT).show();
-
             }
         });
+
         mDButton.setOnClickListener(v-> {
             Log.i(TAG,"D Button Clicked");
             if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("D")) {
-                Toast.makeText(MainActivity.this,
-                        R.string.correct_answer_toast,
-                        Toast.LENGTH_SHORT).show();
-                mCurrentQuestionIndex++;
-                if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
-                mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
             } else {
-                Toast.makeText(MainActivity.this,
-                        R.string.wrong_answer_toast,
-                        Toast.LENGTH_SHORT).show();
-
             }
         });
         mEButton.setOnClickListener(v-> {
             Log.i(TAG,"E Button Clicked");
             if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("E")) {
-                Toast.makeText(MainActivity.this,
-                        R.string.correct_answer_toast,
-                        Toast.LENGTH_SHORT).show();
-                mCurrentQuestionIndex++;
-                if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
-                mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
             } else {
-                Toast.makeText(MainActivity.this,
-                        R.string.wrong_answer_toast,
-                        Toast.LENGTH_SHORT).show();
-
             }
         });
+
+
+
+        mNextButton.setOnClickListener(v-> {
+            Log.i(TAG,"Next Button Clicked");
+                if (mCurrentQuestionIndex >= mQuestions.size()) {
+                    Toast.makeText(MainActivity.this,
+                            R.string.No_Next_toast,
+                            Toast.LENGTH_SHORT).show();
+                    mCurrentQuestionIndex =0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            t
+                } else{
+                    mCurrentQuestionIndex++;
+                    mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+                };
+        });
+
+
+        mPrevButton.setOnClickListener(v-> {
+            Log.i(TAG,"Prev Button Clicked");
+            if (mCurrentQuestionIndex <= 0) {
+                Toast.makeText(MainActivity.this,
+                        R.string.No_Prev_toast,
+                        Toast.LENGTH_SHORT).show();
+                mCurrentQuestionIndex =0;
+            } else{
+                mCurrentQuestionIndex--;
+                mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+            };
+        });
+
+        mSubmitButton.setOnClickListener(v-> {
+            Log.i(TAG,"Submit Button Clicked");
+        });
+
+
 
     }
 }

@@ -5,9 +5,12 @@
     <string name="C_button_label">C</string>
     <string name="D_button_label">D</string>
     <string name="E_button_label">E</string>
+    <string name="Prev_button_label">PREV</string>
+    <string name="Submit_button_label">SUBMIT</string>
+    <string name="Next_button_label">NEXT</string>
     <string name="question_text">Is Java an Object-Oriented Language</string>
-    <string name="correct_answer_toast">Correct!</string>
-    <string name="wrong_answer_toast">Wrong!</string>
+    <string name="No_Prev_toast">This is the fist question</string>
+    <string name="No_Next_toast">This is the last question</string>
 
 
     <string name="question1">Is Java an Object-Oriented Language?[A]</string>
