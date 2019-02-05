@@ -1,15 +1,18 @@
 <resources>
-    <string name="app_name">1601 Quiz</string>
-    <string name="yes_button_label">Yes</string>
-    <string name="no_button_label">No</string>
+    <string name="app_name">Comp Science Stream Helper</string>
+    <string name="A_button_label">A</string>
+    <string name="B_button_label">B</string>
+    <string name="C_button_label">C</string>
+    <string name="D_button_label">D</string>
+    <string name="E_button_label">E</string>
     <string name="question_text">Is Java an Object-Oriented Language</string>
     <string name="correct_answer_toast">Correct!</string>
     <string name="wrong_answer_toast">Wrong!</string>
 
 
-    <string name="question1">Is Java an Object-Oriented Language?[Yes]</string>
-    <string name="question2">Is XML an Executable Language?[No]</string>
-    <string name="question3">Is Andoid more popular than iOS?[Yes]</string>
-    <string name="question4">Does Java 1.8 support Lambda expression?[Yes]</string>
-    <string name="question5">Is Android Studio part of Java JDK[No]</string>
+    <string name="question1">Is Java an Object-Oriented Language?[A]</string>
+    <string name="question2">Is XML an Executable Language?[B]</string>
+    <string name="question3">Is Android more popular than iOS?[C]</string>
+    <string name="question4">Does Java 1.8 support Lambda expression?[D]</string>
+    <string name="question5">Is Android Studio part of Java JDK[E]</string>
 </resources>

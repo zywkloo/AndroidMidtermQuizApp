@@ -15,18 +15,40 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <Button
-            android:id ="@+id/yes_button"
-            android:layout_width="wrap_content"
+            android:id="@+id/A_button"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/yes_button_label" />
+            android:text="@string/A_button_label" />
+
         <Button
-            android:id ="@+id/no_button"
+            android:id="@+id/B_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/no_button_label" />
+            android:text="@string/B_button_label" />
+
+        <Button
+            android:id="@+id/C_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/C_button_label" />
+
+        <Button
+            android:id="@+id/D_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/D_button_label" />
+
+        <Button
+            android:id="@+id/E_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/E_button_label" />
 
     </LinearLayout>
 </LinearLayout>

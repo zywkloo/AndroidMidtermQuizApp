@@ -14,9 +14,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private  final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);;
-    private Button mYesButton;
-    private Button mNoButton;
-    private ArrayList<Question> mQuestions = new ArrayList() ;//TODO:Leak?
+    private Button mAButton;
+    private Button mBButton;
+    private Button mCButton;
+    private Button mDButton;
+    private Button mEButton;
+    private ArrayList<Question> mQuestions = new ArrayList() ;
     private  TextView mQuestionTextView;
     private int mCurrentQuestionIndex = 0;
     private String getDeviceInfo(){
@@ -50,8 +53,11 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, getDeviceInfo());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mYesButton= findViewById(R.id.yes_button);
-        mNoButton= findViewById(R.id.no_button);
+        mAButton= findViewById(R.id.A_button);
+        mBButton= findViewById(R.id.B_button);
+        mCButton= findViewById(R.id.C_button);
+        mDButton= findViewById(R.id.D_button);
+        mEButton= findViewById(R.id.E_button);
 
         mQuestions.add(new Question(getString(R.string.question1)));
         mQuestions.add(new Question(getString(R.string.question2)));
@@ -63,9 +69,26 @@ public class MainActivity extends AppCompatActivity {
         mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
 
 
-        mYesButton.setOnClickListener(v->{
-                Log.i(TAG,"Yes Button Clicked");
-                if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("Yes")) {
+        mAButton.setOnClickListener(v->{
+                Log.i(TAG,"A Button Clicked");
+                if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("A")) {
+//                    Toast.makeText(MainActivity.this,
+//                            R.string.correct_answer_toast,
+//                            Toast.LENGTH_SHORT).show();
+                    mCurrentQuestionIndex++;
+                    if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
+                    mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+                } else {
+                    Toast.makeText(MainActivity.this,
+                            R.string.wrong_answer_toast,
+                            Toast.LENGTH_SHORT).show();
+
+                }
+        });
+
+        mBButton.setOnClickListener(v-> {
+                Log.i(TAG,"B Button Clicked");
+                if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("B")) {
                     Toast.makeText(MainActivity.this,
                             R.string.correct_answer_toast,
                             Toast.LENGTH_SHORT).show();
@@ -80,21 +103,53 @@ public class MainActivity extends AppCompatActivity {
                 }
         });
 
-        mNoButton.setOnClickListener(v-> {
-                Log.i(TAG,"No Button Clicked");
-                if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("No")) {
-                    Toast.makeText(MainActivity.this,
-                            R.string.correct_answer_toast,
-                            Toast.LENGTH_SHORT).show();
-                    mCurrentQuestionIndex++;
-                    if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
-                    mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
-                } else {
-                    Toast.makeText(MainActivity.this,
-                            R.string.wrong_answer_toast,
-                            Toast.LENGTH_SHORT).show();
+        mCButton.setOnClickListener(v-> {
+            Log.i(TAG,"C Button Clicked");
+            if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("C")) {
+                Toast.makeText(MainActivity.this,
+                        R.string.correct_answer_toast,
+                        Toast.LENGTH_SHORT).show();
+                mCurrentQuestionIndex++;
+                if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
+                mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+            } else {
+                Toast.makeText(MainActivity.this,
+                        R.string.wrong_answer_toast,
+                        Toast.LENGTH_SHORT).show();
 
-                }
+            }
+        });
+        mDButton.setOnClickListener(v-> {
+            Log.i(TAG,"D Button Clicked");
+            if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("D")) {
+                Toast.makeText(MainActivity.this,
+                        R.string.correct_answer_toast,
+                        Toast.LENGTH_SHORT).show();
+                mCurrentQuestionIndex++;
+                if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
+                mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+            } else {
+                Toast.makeText(MainActivity.this,
+                        R.string.wrong_answer_toast,
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        mEButton.setOnClickListener(v-> {
+            Log.i(TAG,"E Button Clicked");
+            if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("E")) {
+                Toast.makeText(MainActivity.this,
+                        R.string.correct_answer_toast,
+                        Toast.LENGTH_SHORT).show();
+                mCurrentQuestionIndex++;
+                if (mCurrentQuestionIndex >= mQuestions.size()) mCurrentQuestionIndex = 0;
+                mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+            } else {
+                Toast.makeText(MainActivity.this,
+                        R.string.wrong_answer_toast,
+                        Toast.LENGTH_SHORT).show();
+
+            }
         });
 
     }
