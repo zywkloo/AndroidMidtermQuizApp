@@ -54,8 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         Log.i(TAG, getDeviceInfo());
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "onCreate(Bundle)");
         setContentView(R.layout.activity_main);
         mAButton= findViewById(R.id.A_button);
         mBButton= findViewById(R.id.B_button);
@@ -147,6 +149,37 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG,"Submit Button Clicked");
         });
 
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.i(TAG, "onStart()") ;
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.i(TAG, "onResume()") ;
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.i(TAG, "onPause()") ;
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.i(TAG, "onStop()") ;
+    }
+
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.i(TAG, "onDestroy()") ;
     }
 }
 
