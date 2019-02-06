@@ -1,5 +1,6 @@
 package com.comp1601.truefalsequiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
 
-    private  final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);;
+    private final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);;
     private Button mAButton;
     private Button mBButton;
     private Button mCButton;
@@ -75,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
         mQuestions.add(new Question(getString(R.string.question3)));
         mQuestions.add(new Question(getString(R.string.question4)));
         mQuestions.add(new Question(getString(R.string.question5)));
+        mQuestions.add(new Question(getString(R.string.question6)));
+        mQuestions.add(new Question(getString(R.string.question7)));
+        mQuestions.add(new Question(getString(R.string.question8)));
+        mQuestions.add(new Question(getString(R.string.question9)));
+        mQuestions.add(new Question(getString(R.string.question10)));
 
         mQuestionTextView=(TextView) findViewById(R.id.question_text_view);
         mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
@@ -147,6 +153,8 @@ public class MainActivity extends AppCompatActivity {
 
         mSubmitButton.setOnClickListener(v-> {
             Log.i(TAG,"Submit Button Clicked");
+            Intent intent=new Intent(MainActivity.this,Result.class);   //Intent intent=new Intent(MainActivity.this,JumpToActivity.class);
+            startActivity（intent）；
         });
 
     }

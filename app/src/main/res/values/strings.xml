@@ -18,4 +18,9 @@
     <string name="question3">Is Android more popular than iOS?[C]</string>
     <string name="question4">Does Java 1.8 support Lambda expression?[D]</string>
     <string name="question5">Is Android Studio part of Java JDK[E]</string>
+    <string name="question6">Is Java an Object-Oriented Language?[A]</string>
+    <string name="question7">Is XML an Executable Language?[B]</string>
+    <string name="question8">Is Android more popular than iOS?[C]</string>
+    <string name="question9">Does Java 1.8 support Lambda expression?[D]</string>
+    <string name="question10">Is Android Studio part of Java JDK[E]</string>
 </resources>
