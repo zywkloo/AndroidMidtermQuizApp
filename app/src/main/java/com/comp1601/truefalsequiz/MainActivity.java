@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private  final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);;
     private Button mYesButton;
     private Button mNoButton;
-    private ArrayList<Question> mQuestions = new ArrayList() ;//TODO:Leak?
+    private ArrayList<Question> mQuestions = new ArrayList() ;
     private  TextView mQuestionTextView;
     private int mCurrentQuestionIndex = 0;
     private String getDeviceInfo(){
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, getDeviceInfo());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.i(TAG, "onCreat(Bundle)");
         mYesButton= findViewById(R.id.yes_button);
         mNoButton= findViewById(R.id.no_button);
 
@@ -97,5 +98,37 @@ public class MainActivity extends AppCompatActivity {
                 }
         });
 
+    }
+
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.i(TAG, "onStart()") ;
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.i(TAG, "onResume()") ;
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.i(TAG, "onPause()") ;
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.i(TAG, "onStop()") ;
+    }
+
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.i(TAG, "onDestroy()") ;
     }
 }
