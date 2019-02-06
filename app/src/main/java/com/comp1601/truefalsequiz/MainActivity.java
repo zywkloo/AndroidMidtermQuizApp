@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "Next Button Clicked");
             if (mCurrentQuestionIndex >= mQuestions.size()-1) {
                 Toast.makeText(MainActivity.this,
-                        R.string.No_Next_toast,
+                        R.string.No_Next_label,
                         Toast.LENGTH_SHORT).show();
                 mCurrentQuestionIndex = (mQuestions.size()-1);
             }   else{
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG,"Prev Button Clicked");
             if (mCurrentQuestionIndex <= 0) {
                 Toast.makeText(MainActivity.this,
-                        R.string.No_Prev_toast,
+                        R.string.No_Prev_label,
                         Toast.LENGTH_SHORT).show();
                 mCurrentQuestionIndex =0;
             } else{

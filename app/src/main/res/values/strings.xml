@@ -9,8 +9,8 @@
     <string name="Submit_button_label">SUBMIT</string>
     <string name="Next_button_label">NEXT</string>
     <string name="question_text">Is Java an Object-Oriented Language</string>
-    <string name="No_Prev_toast">This is the fist question</string>
-    <string name="No_Next_toast">This is the last question</string>
+    <string name="No_Prev_label">This is the fist question</string>
+    <string name="No_Next_label">This is the last question</string>
 
 
     <string name="question1">Is Java an Object-Oriented Language?[A]</string>
