@@ -15,7 +15,7 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String EXTRA_MESSAGE = "Grade";
+    private static final String EXTRA_MESSAGE = "Grade";
     private static Integer countOfRightAnswers = 0;
 
     private final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);;
@@ -61,10 +61,39 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void sendMessage(View view) {
+    private void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayResultActivity.class);
         intent.putExtra(EXTRA_MESSAGE, countOfRightAnswers);
         startActivity(intent);
+        this.finish();
+    }
+
+
+    private void checkButtonsBackground(){
+        mAButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_test,null));
+        mBButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_test,null));
+        mCButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_test,null));
+        mDButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_test,null));
+        mEButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_test,null));
+        switch (mAnswers.get(mCurrentQuestionIndex)) {
+            case "A":
+                mAButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_selected,null));
+                break;
+            case "B":
+                mBButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_selected,null));
+                break;
+            case "C":
+                mCButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_selected,null));
+                break;
+            case "D":
+                mDButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_selected,null));
+                break;
+            case "E":
+                mEButton.setBackground(this.getResources().getDrawable(R.drawable.shape_button_selected,null));
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -101,10 +130,10 @@ public class MainActivity extends AppCompatActivity {
         mQuestionTextView=(TextView) findViewById(R.id.question_text_view);
         mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
 
-
         mAButton.setOnClickListener(v->{
                 Log.i(TAG,"A Button Clicked");
                 mAnswers.set(mCurrentQuestionIndex,"A");
+                checkButtonsBackground();
                 if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("A")) {
                     mGrade.set(mCurrentQuestionIndex,1);
                 } else {
@@ -113,9 +142,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mBButton.setOnClickListener(v-> {
-                Log.i(TAG,"B Button Clicked");
+            Log.i(TAG,"B Button Clicked");
+            mAnswers.set(mCurrentQuestionIndex,"B");
+            checkButtonsBackground();
             if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("B")) {
+                mGrade.set(mCurrentQuestionIndex,1);
             } else {
+                mGrade.set(mCurrentQuestionIndex,0);
             }
         });
 
@@ -148,10 +181,11 @@ public class MainActivity extends AppCompatActivity {
                         R.string.No_Next_label,
                         Toast.LENGTH_SHORT).show();
                 mCurrentQuestionIndex = (mQuestions.size()-1);
-            }   else{
-            mCurrentQuestionIndex++;
-            mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
-        };
+            } else{
+                mCurrentQuestionIndex++;
+                mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+            };
+            checkButtonsBackground();
 
         });
 
@@ -168,10 +202,12 @@ public class MainActivity extends AppCompatActivity {
                 mCurrentQuestionIndex--;
                 mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
             };
+            checkButtonsBackground();
         });
 
         mSubmitButton.setOnClickListener(v-> {
             Log.i(TAG,"Submit Button Clicked");
+            checkButtonsBackground();
             sendMessage(v);
         });
 
