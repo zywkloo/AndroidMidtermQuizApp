@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private  final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);;
+    private static String QUESTION_INDEX_KEY = "question_index";
     private Button mYesButton;
     private Button mNoButton;
     private ArrayList<Question> mQuestions = new ArrayList() ;
@@ -46,9 +47,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+        Log.i(TAG, "onSaveInstanceState(Bundle)");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, getDeviceInfo());
         super.onCreate(savedInstanceState);
+        if(savedInstanceState != null)
+            mCurrentQuestionIndex = savedInstanceState.getInt(QUESTION_INDEX_KEY, 0);
         setContentView(R.layout.activity_main);
         Log.i(TAG, "onCreat(Bundle)");
         mYesButton= findViewById(R.id.yes_button);
