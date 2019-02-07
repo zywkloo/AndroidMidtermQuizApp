@@ -1,22 +1,23 @@
 package com.comp1601.truefalsequiz;
-
+// new class to handle grade calculation and string parse
 public class Transcript {
     private static final Integer FULLMARK = 100;
     private static final Integer TOTALQUESTIONS = 10;
     private String gradeText;
     private Integer countOfRightAnswers;
-
+    //constructor
     public Transcript(Integer countOfRightAnswers){
         this.countOfRightAnswers=countOfRightAnswers;
-        String strOfRightAnswers=new Integer((int)(countOfRightAnswers/(float)TOTALQUESTIONS)).toString();
-        this.gradeText= strOfRightAnswers+ "/"+ FULLMARK.toString();
+        Integer strOfRightAnswers = new Integer(countOfRightAnswers*TOTALQUESTIONS);
+        this.gradeText= strOfRightAnswers.toString()+ "/"+ FULLMARK.toString();
     }
-
+    //getter
     public String getGradeText() {
         return gradeText;
     }
 
 
+    //get comment
     public String getComment() {
         if (this.countOfRightAnswers >=9) {
             return "A+ Student! Congrats!";

@@ -15,8 +15,8 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String EXTRA_MESSAGE = "Grade";
-    private static Integer countOfRightAnswers = 0;
+    private static final String EXTRA_MESSAGE = "Grade";    //an extra-info key of sending data to result Activity
+    private static Integer countOfRightAnswers = 0; //countOfRightAnswers
 
     private final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);
     private Button mAButton;
@@ -105,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate(Bundle)");
         setContentView(R.layout.activity_main);
-
+        //reset count Of Right Answers counting
+        countOfRightAnswers=0;
 
         mAButton= findViewById(R.id.A_button);
         mBButton= findViewById(R.id.B_button);
@@ -117,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         mNextButton= findViewById(R.id.Next_button);
         mSubmitButton= findViewById(R.id.Submit_button);
 
-
+        //push all Questions.
         mQuestions.add(new Question(getString(R.string.question1)));
         mQuestions.add(new Question(getString(R.string.question2)));
         mQuestions.add(new Question(getString(R.string.question3)));
@@ -129,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         mQuestions.add(new Question(getString(R.string.question9)));
         mQuestions.add(new Question(getString(R.string.question10)));
 
+        //push all Choices.
         mChoices.add(new Choice(getString(R.string.choice1)));
         mChoices.add(new Choice(getString(R.string.choice2)));
         mChoices.add(new Choice(getString(R.string.choice3)));
@@ -146,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
         mChoiceTextView=(TextView) findViewById(R.id.choice_text_view);
         mChoiceTextView.setText(mChoices.get(mCurrentQuestionIndex).getChoice());
 
+        //5 click listener for 5 button respectively
         mAButton.setOnClickListener(v->{
                 Log.i(TAG,"A Button Clicked");
                 mAnswers.set(mCurrentQuestionIndex,"A");
@@ -201,23 +204,26 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
+        //next button handler
         mNextButton.setOnClickListener(v-> {
             Log.i(TAG, "Next Button Clicked");
             if (mCurrentQuestionIndex >= mQuestions.size()-1) {
+                //warn the end of quiz
                 Toast.makeText(MainActivity.this,
                         R.string.No_Next_label,
                         Toast.LENGTH_SHORT).show();
                 mCurrentQuestionIndex = (mQuestions.size()-1);
             } else{
+                //renew 2 text views
                 mCurrentQuestionIndex++;
                 mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+                mChoiceTextView.setText(mChoices.get(mCurrentQuestionIndex).getChoice());
             };
             checkButtonsBackground();
         });
 
 
-
+        //prev button handler
         mPrevButton.setOnClickListener(v-> {
             Log.i(TAG,"Prev Button Clicked");
             if (mCurrentQuestionIndex <= 0) {
@@ -228,13 +234,15 @@ public class MainActivity extends AppCompatActivity {
             } else{
                 mCurrentQuestionIndex--;
                 mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+                mChoiceTextView.setText(mChoices.get(mCurrentQuestionIndex).getChoice());
             };
             checkButtonsBackground();
         });
-
+        //submission handler,ajoshangjixie
         mSubmitButton.setOnClickListener(v-> {
             Log.i(TAG,"Submit Button Clicked");
             checkButtonsBackground();
+            //count the new sum numbers,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             for (int i = 0 ;i<mAnswers.size();i++){
                 if (mGrade.get(i).equals(1)){
                     countOfRightAnswers++;
