@@ -1,5 +1,6 @@
 package com.comp1601.truefalsequiz;
 
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,9 +11,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static String EXTRA_MESSAGE = "Grade";
+    private static Integer countOfRightAnswers = 0;
 
     private final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);;
     private Button mAButton;
@@ -25,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
     private Button mNextButton;
 
     private ArrayList<Question> mQuestions = new ArrayList() ;
+    private static ArrayList<String> mAnswers = new ArrayList(Collections.nCopies(10, new String("unanswered"))) ;
+    private static ArrayList<Integer> mGrade = new ArrayList(Collections.nCopies(10, new Integer(0))) ;
+
+
+
     private  TextView mQuestionTextView;
     private int mCurrentQuestionIndex = 0;
     private String getDeviceInfo(){
@@ -52,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, DisplayResultActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, countOfRightAnswers);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate(Bundle)");
         setContentView(R.layout.activity_main);
+
+
         mAButton= findViewById(R.id.A_button);
         mBButton= findViewById(R.id.B_button);
         mCButton= findViewById(R.id.C_button);
@@ -88,8 +104,11 @@ public class MainActivity extends AppCompatActivity {
 
         mAButton.setOnClickListener(v->{
                 Log.i(TAG,"A Button Clicked");
+                mAnswers.set(mCurrentQuestionIndex,"A");
                 if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("A")) {
+                    mGrade.set(mCurrentQuestionIndex,1);
                 } else {
+                    mGrade.set(mCurrentQuestionIndex,0);
                 }
         });
 
@@ -153,8 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
         mSubmitButton.setOnClickListener(v-> {
             Log.i(TAG,"Submit Button Clicked");
-            Intent intent=new Intent(MainActivity.this,Result.class);   //Intent intent=new Intent(MainActivity.this,JumpToActivity.class);
-            startActivity（intent）；
+            sendMessage(v);
         });
 
     }

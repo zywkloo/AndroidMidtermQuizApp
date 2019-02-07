@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Comp Science Stream Helper</string>
+    <string name="app_name">Mobile Dev Midterm Quiz</string>
     <string name="A_button_label">A</string>
     <string name="B_button_label">B</string>
     <string name="C_button_label">C</string>
@@ -23,4 +23,7 @@
     <string name="question8">Is Android more popular than iOS?[C]</string>
     <string name="question9">Does Java 1.8 support Lambda expression?[D]</string>
     <string name="question10">Is Android Studio part of Java JDK[E]</string>
+
+
+    <string name="your_grade_title">Your Midterm Grade</string>
 </resources>
