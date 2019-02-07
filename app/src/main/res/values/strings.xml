@@ -10,31 +10,31 @@
     <string name="Next_button_label">NEXT</string>
     <string name="question_text">Is Java an Object-Oriented Language</string>
     <string name="No_Prev_label">This is the first question</string>
-    <string name="No_Next_label">This is the last question</string>
+    <string name="No_Next_label">The last question!Double check before SUBMIT</string>
 
 
     <string name="question1">Which company owns Android Studio?[A]</string>
     <string name="question2">Which is another native language used in Android Studio?[B]</string>
-    <string name="question3">Which Operating System is Android based on ?[C]</string>
-    <string name="question4">When is the Midterm?[D]</string>
+    <string name="question3">Which Operating System was AndroidOS derived from?[C]</string>
+    <string name="question4">When is COMP 1601 Midterm?[D]</string>
     <string name="question5">Which course did Pro L.D Nel teach last term?[E]</string>
-    <string name="question6">Which feature provides a similar functionality like "Interface" in Swift?[A]</string>
+    <string name="question6">Which feature in Swift is similar to Java\'s Interface ?[A]</string>
     <string name="question7">What is the newest version of Swift?[B]</string>
     <string name="question8">Which can NOT be used for Android development?[C]</string>
-    <string name="question9">Which one is not a library[D]</string>
-    <string name="question10">What one is not a COMP Science Stream at Carleton?[E]</string>
+    <string name="question9">Which one is not a library?[D]</string>
+    <string name="question10">What one is not a Comp Science Stream at Carleton?[E]</string>
 
 
-    <string name="choice1">A: Google\n B: Micosoft\n C: Tencent\n D: Facebook\n E: Oracle</string>
-    <string name="choice2">A: Swift\n B: Kotlin\n C: JavaScript\n D: Objective-C\n E: C#</string>
-    <string name="choice3">A: Windows\n B: Dos\n C: Linux\n D: MacOS\n E: None</string>
-    <string name="choice4">A: Mar.4 \n B: Feb.26 \n C: Feb.28 \n D: None above\n E: TBD</string>
-    <string name="choice5">A: COMP2401 \n B: COMP2601 \n C: COMP1406 \n D: COMP2404 n E: COMP3005</string>
-    <string name="choice6">A: Protocol \n B: Closure\n C: Delegate\n D: Subscript \n E:Taylor</string>
-    <string name="choice7">A: 6 \n B: 5\n C: 4\n D: 3 \n E:None above</string>
-    <string name="choice8">A: Ionic \n B: ReactNative\n C: ARKit\n D: Xamarin \n E:Unity</string>
-    <string name="choice9">A: Angular \n B: ReactNative\n C: ARKit\n D: GO \n E:OpenGL</string>
-    <string name="choice10">A: Biomedical \n B: Mobile\n C:\n D: Business \n E:CompEngineering</string>
+    <string name="choice1">A: Google B: Microsoft\n C: Apple D: Facebook\n E: Oracle</string>
+    <string name="choice2">A: Swift B: Kotlin\n C: JavaScript D: Objective-C\n E: C#</string>
+    <string name="choice3">A: Windows B: Dos\n C: Linux D: MacOS\n E: None</string>
+    <string name="choice4">A: Mar.4 B: Feb.26 \n C: Feb.28 D: None above\n E: TBD</string>
+    <string name="choice5">A: COMP2401 B: COMP2601 \n C: COMP2404 D: COMP2404 \n E: COMP3005</string>
+    <string name="choice6">A: Protocol B: Closure\n C: Delegate D: Subscript \n E:Taylor</string>
+    <string name="choice7">A: 6 B: 5\n C: 4 D: 3 \n E:None above</string>
+    <string name="choice8">A: Ionic B: ReactNative\n C: ARKit D: Xamarin\n E:Unity</string>
+    <string name="choice9">A: Angular  B: ReactNative\n C: ARKit D: GO \n E:OpenGL</string>
+    <string name="choice10">A: Biomedical B: Mobile\n C:Honor general D: Business \n E:CompEngineering</string>
 
     <string name="your_grade_title">Your Midterm Grade</string>
     <string name="your_grade_result">Your Midterm Result</string>
