@@ -13,8 +13,8 @@
     <string name="No_Next_label">This is the last question</string>
 
 
-    <string name="question1">Is Java an Object-Oriented Language?[A]</string>
-    <string name="question2">Is XML an Executable Language?[B]</string>
+    <string name="question1">Which company owns Android Studio?[A]</string>
+    <string name="question2">Which is another native language used in Android Studio?[B]</string>
     <string name="question3">Is Android more popular than iOS?[C]</string>
     <string name="question4">Does Java 1.8 support Lambda expression?[D]</string>
     <string name="question5">Is Android Studio part of Java JDK[E]</string>
@@ -25,5 +25,18 @@
     <string name="question10">Is Android Studio part of Java JDK[E]</string>
 
 
+    <string name="choice1">A: Google\n B: Micosoft\n C: Tencent\n D: Facebook\n E: Oracle</string>
+    <string name="choice2">A: Swift\n B: Kotlin\n C: JavaScript\n D: Python\n E: C#</string>
+    <string name="choice3">Is Android more popular than iOS?[C]</string>
+    <string name="choice4">Does Java 1.8 support Lambda expression?[D]</string>
+    <string name="choice5">Is Android Studio part of Java JDK[E]</string>
+    <string name="choice6">Is Java an Object-Oriented Language?[A]</string>
+    <string name="choice7">Is XML an Executable Language?[B]</string>
+    <string name="choice8">Is Android more popular than iOS?[C]</string>
+    <string name="choice9">Does Java 1.8 support Lambda expression?[D]</string>
+    <string name="choice10">Is Android Studio part of Java JDK[E]</string>
+
     <string name="your_grade_title">Your Midterm Grade</string>
+    <string name="your_grade_result">Your Midterm Result</string>
+    <string name="your_grade_comment">Your Midterm Comment</string>
 </resources>

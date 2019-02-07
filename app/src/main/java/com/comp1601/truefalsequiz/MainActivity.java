@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String EXTRA_MESSAGE = "Grade";
     private static Integer countOfRightAnswers = 0;
 
-    private final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);;
+    private final String TAG = this.getClass().getSimpleName() + " @" + System.identityHashCode(this);
     private Button mAButton;
     private Button mBButton;
     private Button mCButton;
@@ -29,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private Button mNextButton;
 
     private ArrayList<Question> mQuestions = new ArrayList() ;
+    private ArrayList<Choice> mChoices = new ArrayList() ;
     private static ArrayList<String> mAnswers = new ArrayList(Collections.nCopies(10, new String("unanswered"))) ;
     private static ArrayList<Integer> mGrade = new ArrayList(Collections.nCopies(10, new Integer(0))) ;
 
 
 
     private  TextView mQuestionTextView;
+    private  TextView mChoiceTextView;
     private int mCurrentQuestionIndex = 0;
     private String getDeviceInfo(){
         String s="Device info:";
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayResultActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, countOfRightAnswers);
+        intent.putExtra(EXTRA_MESSAGE, (int)countOfRightAnswers);
         startActivity(intent);
         this.finish();
     }
@@ -127,8 +129,22 @@ public class MainActivity extends AppCompatActivity {
         mQuestions.add(new Question(getString(R.string.question9)));
         mQuestions.add(new Question(getString(R.string.question10)));
 
+        mChoices.add(new Choice(getString(R.string.choice1)));
+        mChoices.add(new Choice(getString(R.string.choice2)));
+        mChoices.add(new Choice(getString(R.string.choice3)));
+        mChoices.add(new Choice(getString(R.string.choice4)));
+        mChoices.add(new Choice(getString(R.string.choice5)));
+        mChoices.add(new Choice(getString(R.string.choice6)));
+        mChoices.add(new Choice(getString(R.string.choice7)));
+        mChoices.add(new Choice(getString(R.string.choice8)));
+        mChoices.add(new Choice(getString(R.string.choice9)));
+        mChoices.add(new Choice(getString(R.string.choice10)));
+
         mQuestionTextView=(TextView) findViewById(R.id.question_text_view);
         mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
+
+        mChoiceTextView=(TextView) findViewById(R.id.choice_text_view);
+        mChoiceTextView.setText(mChoices.get(mCurrentQuestionIndex).getChoice());
 
         mAButton.setOnClickListener(v->{
                 Log.i(TAG,"A Button Clicked");
@@ -154,21 +170,33 @@ public class MainActivity extends AppCompatActivity {
 
         mCButton.setOnClickListener(v-> {
             Log.i(TAG,"C Button Clicked");
+            mAnswers.set(mCurrentQuestionIndex,"C");
+            checkButtonsBackground();
             if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("C")) {
+                mGrade.set(mCurrentQuestionIndex,1);
             } else {
+                mGrade.set(mCurrentQuestionIndex,0);
             }
         });
 
         mDButton.setOnClickListener(v-> {
             Log.i(TAG,"D Button Clicked");
+            mAnswers.set(mCurrentQuestionIndex,"D");
+            checkButtonsBackground();
             if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("D")) {
+                mGrade.set(mCurrentQuestionIndex,1);
             } else {
+                mGrade.set(mCurrentQuestionIndex,0);
             }
         });
         mEButton.setOnClickListener(v-> {
             Log.i(TAG,"E Button Clicked");
+            mAnswers.set(mCurrentQuestionIndex,"E");
+            checkButtonsBackground();
             if (mQuestions.get(mCurrentQuestionIndex).getAnswer().equals("E")) {
+                mGrade.set(mCurrentQuestionIndex,1);
             } else {
+                mGrade.set(mCurrentQuestionIndex,0);
             }
         });
 
@@ -186,7 +214,6 @@ public class MainActivity extends AppCompatActivity {
                 mQuestionTextView.setText(mQuestions.get(mCurrentQuestionIndex).getQuestion());
             };
             checkButtonsBackground();
-
         });
 
 
@@ -208,36 +235,41 @@ public class MainActivity extends AppCompatActivity {
         mSubmitButton.setOnClickListener(v-> {
             Log.i(TAG,"Submit Button Clicked");
             checkButtonsBackground();
+            for (int i = 0 ;i<mAnswers.size();i++){
+                if (mGrade.get(i).equals(1)){
+                    countOfRightAnswers++;
+                }
+            }
             sendMessage(v);
         });
 
     }
-
+    //Start log
     @Override
     protected void onStart(){
         super.onStart();
         Log.i(TAG, "onStart()") ;
     }
-
+    //Resume log
     @Override
     protected void onResume(){
         super.onResume();
         Log.i(TAG, "onResume()") ;
     }
-
+    //Pause log
     @Override
     protected void onPause(){
         super.onPause();
         Log.i(TAG, "onPause()") ;
     }
-
+    //Stop log
     @Override
     protected void onStop(){
         super.onStop();
         Log.i(TAG, "onStop()") ;
     }
 
-
+    //Destroy log
     @Override
     protected void onDestroy(){
         super.onDestroy();
