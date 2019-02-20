@@ -1,7 +1,17 @@
 # TrueFalseQuiz
 * Dummy native Android App with Java and Android Studio.
 
-<br>
-<img src="https://github.com/zywkloo/AndroidMidtermQuizApp/blob/Ass1MultiChoice/Screenshot_1549536972.png?raw=true" width = "300" height = 50% alt="图片名称" align=center />
 
-<img src="https://github.com/zywkloo/AndroidMidtermQuizApp/blob/Ass1MultiChoice/Screenshot_1549537067.png?raw=true" width = "300" height = 50% alt="1" align=center />
+
+<br>
+<div style="width:300px; height:auto; float:left; display:inline">
+<img src="https://github.com/zywkloo/AndroidMidtermQuizApp/blob/Ass1MultiChoice/Portrait.png?raw=true" width = "280" height = 50% alt="图片名称" align=center />
+  </div>
+<div style="width:300px; height:auto; float:left; display:inline">
+<img src="https://github.com/zywkloo/AndroidMidtermQuizApp/blob/Ass1MultiChoice/Portrait_Ret.png?raw=true" width = "280" height = 50% alt="1" align=center />
+  </div>
+  <div style="width:300px; height:auto; float:left; display:inline">
+<img src="https://github.com/zywkloo/AndroidMidtermQuizApp/blob/Ass1MultiChoice/Portrait_RetA.png?raw=true" width = "280" height = 50% alt="1" align=center />
+  </div>
+
+<img src="https://github.com/zywkloo/AndroidMidtermQuizApp/blob/Ass1MultiChoice/Lanndscape.png?raw=true" height = "300" alt="1" align=center />
