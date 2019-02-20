@@ -10,7 +10,7 @@
 <div style="width:300px; height:auto; float:left; display:inline">
 <img src="https://github.com/zywkloo/AndroidMidtermQuizApp/blob/Ass1MultiChoice/Portrait_Ret.png?raw=true" width = "280" height = 50% alt="1" align=center />
   </div>
-  <div style="width:300px; height:auto; float:left; display:inline">
+  <div style="width:300px; height:auto; float:right; display:inline">
 <img src="https://github.com/zywkloo/AndroidMidtermQuizApp/blob/Ass1MultiChoice/Portrait_RetA.png?raw=true" width = "280" height = 50% alt="1" align=center />
   </div>
 
