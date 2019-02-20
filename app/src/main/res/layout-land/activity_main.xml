@@ -1,60 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/repeat_qs"
     android:gravity="center">
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:alpha="0.8"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/question_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background_normal"
-            android:gravity="center_vertical"
-            android:padding="24dp"
-            android:text="@string/question_text"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold|italic" />
-
-        <TextView
-            android:id="@+id/choice_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background_normal"
-            android:gravity="center_horizontal"
-            android:padding="19dp"
-            android:text="@string/question_text"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="@android:color/background_dark" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:alpha="0.8">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="30dp"
+            android:alpha="0.8"
+            android:gravity="top|center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/question_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center_vertical"
+                android:padding="24dp"
+                android:text="@string/question_text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/choice_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center_horizontal"
+                android:padding="19dp"
+                android:text="@string/question_text"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_dark" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
             android:alpha="0.8"
             android:orientation="vertical"
-            android:padding="22dp">
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout4"
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
                 android:id="@+id/A_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:background="@drawable/shape_button_test"
                 android:layerType="none"
                 android:text="@string/A_button_label" />
@@ -63,63 +83,84 @@
                 android:id="@+id/B_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:background="@drawable/shape_button_test"
+                android:padding="5dp"
                 android:text="@string/B_button_label" />
 
             <Button
                 android:id="@+id/C_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_button_test"
+                android:padding="5dp"
                 android:text="@string/C_button_label" />
 
             <Button
                 android:id="@+id/D_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_button_test"
+                android:padding="5dp"
                 android:text="@string/D_button_label" />
 
             <Button
                 android:id="@+id/E_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_button_test"
+                android:padding="5dp"
                 android:text="@string/E_button_label" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/linearLayout4"
+            android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="30dp"
             android:alpha="0.95"
-            android:padding="10dp">
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
                 android:id="@+id/Submit_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
                 android:baselineAligned="false"
                 android:text="@string/Submit_button_label" />
 
             <Button
                 android:id="@+id/Next_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
                 android:baselineAligned="false"
                 android:text="@string/Next_button_label" />
 
             <Button
                 android:id="@+id/Prev_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
                 android:baselineAligned="false"
                 android:text="@string/Prev_button_label" />
 
         </LinearLayout>
-    </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
 </LinearLayout>
