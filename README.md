@@ -1,6 +1,6 @@
 # TrueFalseQuiz
 * Dummy native Android App with Java and Android Studio.
-Another Android app: https://github.com/zywkloo/TicTacToe
+* Another Android app: https://github.com/zywkloo/TicTacToe
 <br>
 <p float="left">
 <div style="width:300px; height:auto; float:left; display:inline">
